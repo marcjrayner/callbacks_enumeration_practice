@@ -35,8 +35,21 @@ Traveller.prototype.calculateTotalDistanceTravelled = function () {
 };
 
 Traveller.prototype.getUniqueModesOfTransport = function () {
+  const transports = this.journeys.map(journey => journey.transport);
+  const uniqueTransports = [...new Set(transports)];
+  return uniqueTransports
+  };
 
-};
+
+  // const modes = []
+  // this.journeys.forEach( (journey) => {
+  //   if (!modes.include(journey.transport)) {
+  //     modes.push(journey.transport)
+  //   }
+  // });
+  // return modes
+
+// };
 
 
 module.exports = Traveller;
